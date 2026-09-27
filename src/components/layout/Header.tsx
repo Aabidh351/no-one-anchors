@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import MobileNav from "./MobileNav";
-import Logo from "../../../public/logo.jpg";
+import Logo from "../../../public/logo.png";
 
 const nav = [
   { href: "/services", label: "Services" },
@@ -89,7 +89,7 @@ export default function Header() {
                   width={48}
                   height={48}
                   className="
-                    h-10 w-10
+                    h-10 w-auto
                     sm:h-11 sm:w-11
                     object-contain
                     rounded-lg

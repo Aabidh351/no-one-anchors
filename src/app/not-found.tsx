@@ -1,8 +1,6 @@
 
 import Link from "next/link";
-import Image from "next/image";
 import NotFoundAnimation from "@/components/animation/NotFoundAnimation";
-import Logo from "../../public/logo.jpg";
 
 export default function NotFound() {
   return (

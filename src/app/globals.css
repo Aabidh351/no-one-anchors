@@ -57,3 +57,11 @@ h4 {
   outline: 2px solid var(--brass);
   outline-offset: 2px;
 }
+
+.cta-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--harbor) 0%,
+    var(--harbor-dark) 100%
+  );
+}

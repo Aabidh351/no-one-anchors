@@ -44,7 +44,7 @@ export default function NotFoundAnimation() {
           width={100}
           height={100}
           className="
-            h-32 w-32
+            h-auto w-32
             object-contain
           "
           priority
