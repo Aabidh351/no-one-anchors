@@ -1,5 +1,4 @@
-import type { GalleryImage } from "@/lib/api/data";
-import type { Service } from "@/lib/api/data";
+import type { GalleryImage,Service,Port } from "@/lib/api/data";
 
 export function getServices() {
   return apiGet<Service[]>("/api/services");
@@ -34,4 +33,8 @@ export type GalleryResponse = {
 
 export async function getGallery(page = 1, limit = 6) {
   return apiGet<GalleryResponse>(`/api/gallery?page=${page}&limit=${limit}`);
+}
+
+export function getPorts() {
+  return apiGet<Port[]>("/api/ports");
 }
