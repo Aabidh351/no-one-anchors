@@ -11,6 +11,7 @@ const nav = [
   { href: "/ports", label: "Ports" },
   { href: "/certifications", label: "Certifications" },
   { href: "/news", label: "News" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
 ];
 
@@ -27,7 +28,7 @@ export default function MobileNav() {
         onClick={() => setOpen((v) => !v)}
         whileTap={{ scale: 0.9 }}
         className="
-          relative z-[60]
+          relative z-15
           flex h-10 w-10
           items-center justify-center
           rounded-full
@@ -37,7 +38,7 @@ export default function MobileNav() {
           shadow-sm
         "
       >
-        <div className="flex flex-col items-center justify-center gap-[5px]">
+        <div className="flex flex-col items-center justify-center gap-1.25">
 
           <motion.span
             animate={
@@ -48,7 +49,7 @@ export default function MobileNav() {
             transition={{ duration: 0.25 }}
             className="
               block
-              h-[2px]
+              h-0.5
               w-5
               rounded-full
               bg-harbor
@@ -60,7 +61,7 @@ export default function MobileNav() {
             transition={{ duration: 0.15 }}
             className="
               block
-              h-[2px]
+              h-0.5
               w-5
               rounded-full
               bg-harbor
@@ -76,7 +77,7 @@ export default function MobileNav() {
             transition={{ duration: 0.25 }}
             className="
               block
-              h-[2px]
+              h-0.5
               w-5
               rounded-full
               bg-harbor

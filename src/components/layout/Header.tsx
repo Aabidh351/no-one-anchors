@@ -14,6 +14,7 @@ const nav = [
   { href: "/ports", label: "Ports" },
   { href: "/certifications", label: "Certifications" },
   { href: "/news", label: "News" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
 ];
 
@@ -90,7 +91,7 @@ export default function Header() {
                   height={48}
                   className="
                     h-10 w-auto
-                    sm:h-11 sm:w-11
+                    sm:h-11 sm:w-auto
                     object-contain
                     rounded-lg
                   "

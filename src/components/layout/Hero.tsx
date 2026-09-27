@@ -93,7 +93,7 @@ export default function Hero() {
               <Image
                 src={slides[current].src}
                 alt={slides[current].alt}
-                fill
+                fill loading="eager"
                 priority={current === 0}
                 sizes="100vw"
                 className="object-cover"

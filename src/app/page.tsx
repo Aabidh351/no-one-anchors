@@ -1,6 +1,7 @@
 import About from "@/components/layout/About";
 import Certifications from "@/components/layout/Certifications";
 import CTASection from "@/components/layout/CTASection";
+import Gallery from "@/components/layout/Gallery";
 import Hero from "@/components/layout/Hero";
 import Ports from "@/components/layout/Ports";
 import Products from "@/components/layout/Products";
@@ -36,6 +37,7 @@ export default function Home() {
   <Hero/>
   <About/>
   <Why/>
+  <Gallery />
   <Services/>
   <Products/>
   <Ports/>
