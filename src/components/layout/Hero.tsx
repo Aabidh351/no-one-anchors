@@ -58,25 +58,6 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  /* ================= MANUAL SLIDE ================= */
-
-  const goToSlide = (index: number) => {
-    setDirection(index > current ? 1 : -1);
-    setCurrent(index);
-  };
-
-  const nextSlide = () => {
-    setDirection(1);
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const previousSlide = () => {
-    setDirection(-1);
-    setCurrent((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
-  };
-
   return (
     <section className="relative overflow-hidden bg-ink">
 
