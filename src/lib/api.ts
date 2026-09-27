@@ -1,4 +1,14 @@
 import type { GalleryImage } from "@/lib/api/data";
+import type { Service } from "@/lib/api/data";
+
+export function getServices() {
+  return apiGet<Service[]>("/api/services");
+}
+
+export async function getService(slug: string) {
+  const all = await getServices();
+  return all.find((s) => s.slug === slug);
+}
 
 function getBaseUrl() {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
