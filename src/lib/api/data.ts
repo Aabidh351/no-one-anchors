@@ -35,6 +35,7 @@ export type NewsPost = {
   slug: string;
   title: string;
   date: string;
+  category: string;
   excerpt: string;
   body: string;
 };
@@ -201,15 +202,41 @@ export const newsPosts: NewsPost[] = [
     slug: "provisioning-lead-times-2026",
     title: "Provisioning lead times ahead of the coming quarter",
     date: "2026-08-14",
+    category: "Port updates",
     excerpt: "What to expect for fresh-produce lead times across our port network this quarter.",
-    body: "Full article content goes here — replace with your real content.",
+    body: "Placeholder paragraph one. Replace with your real article content.\n\nPlaceholder paragraph two. Separate paragraphs with a blank line.\n\nPlaceholder paragraph three.",
   },
   {
     slug: "issa-membership-renewed",
     title: "ISSA membership renewed for another term",
     date: "2026-06-02",
+    category: "Company",
     excerpt: "Our ISSA membership has been renewed, reaffirming our commitment to global supply standards.",
-    body: "Full article content goes here — replace with your real content.",
+    body: "Placeholder paragraph one. Replace with your real article content.\n\nPlaceholder paragraph two.",
+  },
+  {
+    slug: "new-cold-storage-chattogram",
+    title: "New cold storage capacity at our Chattogram warehouse",
+    date: "2026-04-20",
+    category: "Operations",
+    excerpt: "Additional cold-chain capacity means shorter lead times on fresh and frozen provisions.",
+    body: "Placeholder paragraph one. Replace with your real article content.\n\nPlaceholder paragraph two.",
+  },
+  {
+    slug: "singapore-anchorage-cover",
+    title: "Extended anchorage delivery cover in Singapore",
+    date: "2026-02-11",
+    category: "Port updates",
+    excerpt: "Launch deliveries to Singapore anchorages are now available on extended hours.",
+    body: "Placeholder paragraph one. Replace with your real article content.\n\nPlaceholder paragraph two.",
+  },
+  {
+    slug: "safety-equipment-servicing-reminder",
+    title: "Reminder: plan LSA and FFE servicing before port calls",
+    date: "2025-11-30",
+    category: "Guidance",
+    excerpt: "Booking servicing early avoids certificate gaps and last-minute surveys.",
+    body: "Placeholder paragraph one. Replace with your real article content.\n\nPlaceholder paragraph two.",
   },
 ];
 
