@@ -39,7 +39,7 @@ export default function Gallery() {
     setSelectedIndex((prev) => (prev + 1) % gallery.length);
   };
   return (
-    <section className="bg-foam py-24 sm:py-28">
+    <section className="bg-foam py-0 md:py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* ================= HEADER ================= */}
 
@@ -62,7 +62,7 @@ export default function Gallery() {
 
           <h2
             className="
-              text-4xl
+              text-3xl md:text-4xl
               font-black
               leading-tight
               tracking-tight

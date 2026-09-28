@@ -20,11 +20,9 @@ export default function Ports() {
   return (
     <section className="bg-foam py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
         {/* ================= BACKGROUND ================= */}
 
         <div className="relative overflow-hidden">
-
           <div className="absolute inset-0">
             <Image
               src="/ports/ports.jpg"
@@ -36,8 +34,8 @@ export default function Ports() {
 
             {/* Overlay */}
             {/* Left-side text overlay */}
-        <div
-            className="
+            <div
+              className="
             absolute
             inset-y-0
             left-0
@@ -45,9 +43,9 @@ export default function Ports() {
             bg-linear-to-r
         from-[#062d4f]/75
         via-[#073b78]/35
-        to-transparent" />
+        to-transparent"
+            />
           </div>
-
 
           {/* ================= CONTENT ================= */}
 
@@ -63,11 +61,9 @@ export default function Ports() {
               lg:py-20
             "
           >
-
             {/* Heading */}
 
             <div className="max-w-2xl">
-
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-10 bg-sky-300" />
 
@@ -86,18 +82,16 @@ export default function Ports() {
 
               <h2
                 className="
-                  text-4xl
+                  text-3xl
                   font-black
                   leading-tight
                   tracking-tight
                   text-white
-                  sm:text-5xl
+                  md:text-5xl
                 "
               >
                 Reliable support,
-                <span className="block text-sky-300">
-                  wherever you dock.
-                </span>
+                <span className="block text-sky-300">wherever you dock.</span>
               </h2>
 
               <p
@@ -110,13 +104,11 @@ export default function Ports() {
                   sm:text-base
                 "
               >
-                Our maritime services and supplies are available
-                across key ports, helping vessels receive the
-                support they need throughout their operations.
+                Our maritime services and supplies are available across key
+                ports, helping vessels receive the support they need throughout
+                their operations.
               </p>
-
             </div>
-
 
             {/* ================= PORTS ================= */}
 
@@ -128,7 +120,6 @@ export default function Ports() {
                 sm:grid-cols-3
               "
             >
-
               {ports.map((port, index) => (
                 <div
                   key={port.name}
@@ -144,7 +135,6 @@ export default function Ports() {
                     hover:bg-white/15
                   "
                 >
-
                   <div
                     className="
                       text-xs
@@ -175,12 +165,9 @@ export default function Ports() {
                   >
                     {port.location}
                   </p>
-
                 </div>
               ))}
-
             </div>
-
 
             {/* ================= CTA ================= */}
 
@@ -207,11 +194,8 @@ export default function Ports() {
               View Our Ports
               <span>→</span>
             </Link>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

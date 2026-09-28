@@ -22,42 +22,58 @@ const legalLinks = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#031f2a] text-white">
-
       {/* ================= BACKGROUND IMAGE ================= */}
 
       <div className="absolute inset-0">
-
+        {/* Desktop Background */}
         <Image
           src="/footer/footer.png"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="
+      hidden
+      object-cover
+      object-center
+      sm:block
+    "
+        />
+
+        {/* Mobile Background */}
+        <Image
+          src="/footer/footer-mobile.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="
+      block
+      object-cover
+      object-center
+      sm:hidden
+    "
         />
 
         {/* Bottom dark gradient */}
-
         <div
           className="
-            absolute
-            inset-0
-            bg-[linear-gradient(
-              to_bottom,
-              rgba(3,31,42,0)_0%,
-              rgba(3,31,42,0)_35%,
-              rgba(3,31,42,0.08)_45%,
-              rgba(3,31,42,0.28)_55%,
-              rgba(3,31,42,0.58)_67%,
-              rgba(3,31,42,0.82)_78%,
-              rgba(3,31,42,0.96)_90%,
-              rgba(3,31,42,1)_100%
-            )]
-          "
+      absolute
+      inset-0
+      bg-[linear-gradient(
+        to_bottom,
+        rgba(3,31,42,0)_0%,
+        rgba(3,31,42,0)_35%,
+        rgba(3,31,42,0.08)_45%,
+        rgba(3,31,42,0.28)_55%,
+        rgba(3,31,42,0.58)_67%,
+        rgba(3,31,42,0.82)_78%,
+        rgba(3,31,42,0.96)_90%,
+        rgba(3,31,42,1)_100%
+      )]
+    "
         />
-
       </div>
-
 
       {/* ================= CONTENT ================= */}
 
@@ -68,14 +84,13 @@ export default function Footer() {
           mx-auto
           max-w-7xl
           px-6
-          pt-[360px]
+          pt-10
           sm:px-8
-          sm:pt-[420px]
+          sm:pt-50
           lg:px-10
-          lg:pt-[440px]
+          lg:pt-110
         "
       >
-
         <div
           className="
             grid
@@ -87,11 +102,13 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
             pb-10
           "
         >
-
           {/* ================= COMPANY LINKS ================= */}
 
           <div>
-            <h3 className="text-sm font-bold">
+            <h3
+              className="text-sm
+                    md:text-lg font-bold"
+            >
               Links
             </h3>
 
@@ -105,6 +122,7 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
                   className="
                     block
                     text-sm
+                    md:text-lg
                     text-white/85
                     transition-colors
                     hover:text-sky-300
@@ -116,11 +134,13 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
             </div>
           </div>
 
-
           {/* ================= USEFUL LINKS ================= */}
 
           <div>
-            <h3 className="text-sm font-bold">
+            <h3
+              className="text-sm
+                    md:text-lg font-bold"
+            >
               Links
             </h3>
 
@@ -134,7 +154,9 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
                   className="
                     block
                     text-sm
-                    text-white/85
+                    md:text-lg
+                    
+                    text-white
                     transition-colors
                     hover:text-sky-300
                   "
@@ -145,11 +167,13 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
             </div>
           </div>
 
-
           {/* ================= LEGAL ================= */}
 
           <div>
-            <h3 className="text-sm font-bold">
+            <h3
+              className="text-sm
+                    md:text-lg font-bold"
+            >
               Information
             </h3>
 
@@ -161,8 +185,8 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
                   key={link.href}
                   href={link.href}
                   className="
-                    block
-                    text-sm
+                    block text-sm
+                    md:text-lg
                     text-white/85
                     transition-colors
                     hover:text-sky-300
@@ -174,12 +198,13 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
             </div>
           </div>
 
-
           {/* ================= CONTACT ================= */}
 
           <div className="lg:text-right">
-
-            <h3 className="text-lg font-black sm:text-xl">
+            <h3
+              className="text-sm
+                    md:text-lg font-black sm:text-xl"
+            >
               NoOne Anchors
             </h3>
 
@@ -191,10 +216,7 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
               <p>Chattogram, Bangladesh</p>
 
               <p>
-                <a
-                  href="tel:+8800000000000"
-                  className="hover:text-sky-300"
-                >
+                <a href="tel:+8800000000000" className="hover:text-sky-300">
                   Tel: +880 0000 000000
                 </a>
               </p>
@@ -209,11 +231,9 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
               </p>
             </div>
 
-
             {/* Social Icons */}
 
             <div className="mt-6 flex gap-3 lg:justify-end">
-
               <a
                 href="#"
                 aria-label="Facebook"
@@ -232,9 +252,7 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
                   hover:bg-sky-300/10
                 "
               >
-                <span className="text-sm font-bold">
-                  f
-                </span>
+                <span className="text-sm font-bold">f</span>
               </a>
 
               <a
@@ -255,9 +273,7 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
                   hover:bg-sky-300/10
                 "
               >
-                <span className="text-sm">
-                  ◎
-                </span>
+                <span className="text-sm">◎</span>
               </a>
 
               <a
@@ -278,17 +294,11 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
                   hover:bg-sky-300/10
                 "
               >
-                <span className="text-xs font-bold">
-                  in
-                </span>
+                <span className="text-xs font-bold">in</span>
               </a>
-
             </div>
-
           </div>
-
         </div>
-
 
         {/* ================= BOTTOM BAR ================= */}
 
@@ -305,56 +315,36 @@ lg:grid-cols-[1fr_1fr_1fr_1.5fr]
             md:justify-between
           "
         >
-
-          <Link
-            href="/"
-            className="flex items-center gap-3"
-          >
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo.png"
               alt="NoOne Anchors"
               width={42}
               height={42}
-              className="rounded"
+              className="rounded w-10.5 h-auto"
             />
 
             <span className="text-lg font-black text-white">
               NoOne
-              <span className="text-sky-300">
-                Anchors
-              </span>
+              <span className="text-sky-300">Anchors</span>
             </span>
           </Link>
 
-
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-
-            <Link
-              href="/privacy"
-              className="hover:text-white"
-            >
+            <Link href="/privacy" className="hover:text-white">
               Privacy Policy
             </Link>
 
-            <Link
-              href="/terms"
-              className="hover:text-white"
-            >
+            <Link href="/terms" className="hover:text-white">
               Terms & Conditions
             </Link>
-
           </div>
 
-
           <p>
-            © {new Date().getFullYear()} NoOne Anchors.
-            All rights reserved.
+            © {new Date().getFullYear()} NoOne Anchors. All rights reserved.
           </p>
-
         </div>
-
       </div>
-
     </footer>
   );
 }

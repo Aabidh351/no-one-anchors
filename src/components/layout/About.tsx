@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import AboutImage from "../../../public/about/about.jpg"
+import AboutImage from "../../../public/about/about.jpg";
 
 export default function About() {
   return (
-    <section className="bg-foam py-20 sm:py-24">
+    <section className="bg-foam pt-20 md:pt-0 md:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
         <div className="grid items-center gap-12 lg:grid-cols-2">
-
           {/* Text */}
           <div>
             <div className="mb-4 flex items-center gap-3">
@@ -19,11 +17,9 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className="text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">
+            <h2 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-ink sm:text-5xl">
               Your trusted partner
-              <span className="block text-harbor">
-                in maritime services.
-              </span>
+              <span className="block text-harbor">in maritime services.</span>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
@@ -76,7 +72,8 @@ export default function About() {
             </div>
 
             {/* Experience badge */}
-            <div className="
+            <div
+              className="
               absolute
               -bottom-5
               -left-4
@@ -87,14 +84,14 @@ export default function About() {
               text-white
               shadow-xl
               sm:-left-6
-            ">
+            "
+            >
               <div className="text-2xl font-black">20+</div>
               <div className="text-[10px] uppercase tracking-wider text-sky-200">
                 Years of Experience
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

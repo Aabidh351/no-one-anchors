@@ -32,14 +32,15 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
             <Image
               src={img.url}
               alt={img.caption}
-              fill loading="eager"
+              fill
+              loading="eager"
               sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
             />
 
             <div className="absolute inset-0 bg-linear-to-t from-harbor-dark/90 via-harbor-dark/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
 
-            <span className="absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full bg-white/90 text-harbor-dark backdrop-blur-sm">
+            <span className="invisible md:visible absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full bg-white/90 text-harbor-dark backdrop-blur-sm">
               {img.category}
             </span>
 

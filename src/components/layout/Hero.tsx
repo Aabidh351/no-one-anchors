@@ -133,6 +133,7 @@ export default function Hero() {
         <div
           className="
           relative
+          pt-12.5 md:pt-0
           z-10
           mx-auto
           flex
@@ -208,9 +209,9 @@ export default function Hero() {
               }}
               className="
                 max-w-3xl
-                text-5xl
+                text-3xl md:text-5xl
                 font-black
-                leading-[0.95]
+                md:leading-[0.95]
                 tracking-[-0.04em]
                 text-white
                 sm:text-6xl
