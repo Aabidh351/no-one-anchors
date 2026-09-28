@@ -1,5 +1,4 @@
 import About from "@/components/layout/About";
-import Certifications from "@/components/layout/Certifications";
 import CTASection from "@/components/layout/CTASection";
 import Gallery from "@/components/layout/Gallery";
 import Hero from "@/components/layout/Hero";
@@ -41,7 +40,6 @@ export default function Home() {
   <Services/>
   <Products/>
   <Ports/>
-  <Certifications/>
   <TrustBar certifications={certifications} />
       <Testimonials testimonials={testimonials} />
       <CTASection />

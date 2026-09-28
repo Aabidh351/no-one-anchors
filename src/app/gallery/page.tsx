@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/ui/PageHeader";
 import GalleryGrid from "@/components/gallery/GalleryGrid";
 import Pagination from "@/components/gallery/Pagination";
-import { getGallery } from "@/lib/api";
+import { getGalleryPage } from "@/lib/gallery";
 
 export const dynamic = "force-dynamic";
 
@@ -17,8 +17,8 @@ export default async function GalleryPage({
   searchParams: Promise<{ page?: string }>;
 }) {
   const { page: pageParam } = await searchParams;
-  const page = Math.max(1, Number(pageParam) || 1);
-  const { images, totalPages } = await getGallery(page, 10);
+const page = Math.max(1, Number(pageParam) || 1);
+const { images, totalPages } = getGalleryPage(page, 10);
 
   return (
     <>

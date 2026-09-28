@@ -3,7 +3,7 @@ import WaveDivider from "@/components/ui/WaveDivider";
 
 export default function CTASection() {
   return (
-    <section>
+    <section className="bg-paper">
       <WaveDivider fill="var(--harbor-dark)" />
       <div className="cta-gradient">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">

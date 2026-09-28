@@ -1,15 +1,10 @@
 import { NextResponse } from "next/server";
-import { galleryImages } from "@/lib/api/data";
+import { getGalleryPage } from "@/lib/gallery";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const page = Math.max(1, Number(searchParams.get("page")) || 1);
-  const limit = Math.max(1, Number(searchParams.get("limit")) || 6);
+  const page = Number(searchParams.get("page")) || 1;
+  const limit = Number(searchParams.get("limit")) || 10;
 
-  const total = galleryImages.length;
-  const totalPages = Math.max(1, Math.ceil(total / limit));
-  const start = (page - 1) * limit;
-  const images = galleryImages.slice(start, start + limit);
-
-  return NextResponse.json({ images, total, page, totalPages, limit });
+  return NextResponse.json(getGalleryPage(page, limit));
 }
