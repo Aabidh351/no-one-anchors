@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 const gallery = [
   {
@@ -33,15 +34,13 @@ const gallery = [
 ];
 
 export default function Gallery() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
   return (
     <section className="bg-foam py-24 sm:py-28">
-
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
         {/* ================= HEADER ================= */}
 
         <div className="mb-10 max-w-2xl">
-
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-10 bg-harbor" />
 
@@ -69,9 +68,7 @@ export default function Gallery() {
             "
           >
             Built around the
-            <span className="block text-harbor">
-              maritime industry.
-            </span>
+            <span className="block text-harbor">maritime industry.</span>
           </h2>
 
           <p
@@ -84,12 +81,10 @@ export default function Gallery() {
               sm:text-base
             "
           >
-            Explore our services, port operations, and maritime
-            capabilities through a closer look at what we do.
+            Explore our services, port operations, and maritime capabilities
+            through a closer look at what we do.
           </p>
-
         </div>
-
 
         {/* ================= GALLERY ================= */}
 
@@ -105,7 +100,6 @@ export default function Gallery() {
             md:h-140
           "
         >
-
           {gallery.map((item, index) => (
             <motion.div
               key={item.image}
@@ -116,20 +110,9 @@ export default function Gallery() {
                 duration: 0.5,
                 delay: index * 0.08,
               }}
-              className="
-                group
-                relative
-                min-w-0
-                flex-1
-                overflow-hidden
-                cursor-pointer
-                transition-[flex]
-                duration-700
-                ease-[cubic-bezier(0.22,1,0.36,1)]
-                hover:flex-4
-              "
+              className={`group relative min-w-0 flex-1 overflow-hidden cursor-pointer transition-[flex] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${selectedIndex === index ? "flex-4" : "flex-1"} md:flex-1 md:hover:flex-4`}
+              onClick={() => setSelectedIndex(index)}
             >
-
               {/* Image */}
 
               <Image
@@ -146,7 +129,6 @@ export default function Gallery() {
                 "
               />
 
-
               {/* Dark overlay */}
 
               <div
@@ -159,7 +141,6 @@ export default function Gallery() {
                   group-hover:bg-[#031f2a]/20
                 "
               />
-
 
               {/* Bottom gradient */}
 
@@ -177,11 +158,10 @@ export default function Gallery() {
                 "
               />
 
-
               {/* ================= COLLAPSED LABEL ================= */}
 
-<div
-  className="
+              <div
+                className="
     absolute
     left-1/2
     top-8
@@ -192,9 +172,9 @@ export default function Gallery() {
     group-hover:opacity-0
     group-hover:-translate-y-3
   "
->
-  <span
-    className="
+              >
+                <span
+                  className="
       block
       whitespace-nowrap
       text-xs
@@ -205,10 +185,10 @@ export default function Gallery() {
       [writing-mode:vertical-rl]
       rotate-180
     "
-  >
-    {item.title}
-  </span>
-</div>
+                >
+                  {item.title}
+                </span>
+              </div>
 
               {/* ================= EXPANDED CONTENT ================= */}
 
@@ -229,11 +209,8 @@ export default function Gallery() {
                   sm:p-8
                 "
               >
-
                 <div className="flex items-end justify-between gap-5">
-
                   <div>
-
                     <span
                       className="
                         text-[10px]
@@ -268,9 +245,7 @@ export default function Gallery() {
                     >
                       {item.subtitle}
                     </p>
-
                   </div>
-
 
                   {/* Arrow */}
 
@@ -295,21 +270,17 @@ export default function Gallery() {
                   >
                     →
                   </div>
-
                 </div>
-
               </div>
-
             </motion.div>
           ))}
-
         </div>
         {/* ================= VIEW FULL GALLERY ================= */}
 
-<div className="mt-6 flex justify-end">
-  <Link
-    href="/gallery"
-    className="
+        <div className="mt-6 flex justify-end">
+          <Link
+            href="/gallery"
+            className="
       group
       inline-flex
       items-center
@@ -332,21 +303,18 @@ export default function Gallery() {
       hover:shadow-lg
       hover:shadow-harbor/20
     "
-  >
-    View Full Gallery
-
-    <motion.span
-      initial={{ x: 0 }}
-      whileHover={{ x: 4 }}
-      transition={{ duration: 0.2 }}
-    >
-      →
-    </motion.span>
-  </Link>
-</div>
-
+          >
+            View Full Gallery
+            <motion.span
+              initial={{ x: 0 }}
+              whileHover={{ x: 4 }}
+              transition={{ duration: 0.2 }}
+            >
+              →
+            </motion.span>
+          </Link>
+        </div>
       </div>
-
     </section>
   );
 }
