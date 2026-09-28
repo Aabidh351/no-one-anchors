@@ -59,15 +59,12 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-ink">
-
+    <section className="relative overflow-visible bg-ink">
       {/* ================= HERO ================= */}
 
       <div className="relative min-h-170 lg:min-h-180">
-
         {/* Background */}
-        <div className="absolute inset-0">
-
+        <div className="absolute inset-0 overflow-hidden">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={slides[current].src}
@@ -93,7 +90,8 @@ export default function Hero() {
               <Image
                 src={slides[current].src}
                 alt={slides[current].alt}
-                fill loading="eager"
+                fill
+                loading="eager"
                 priority={current === 0}
                 sizes="100vw"
                 className="object-cover"
@@ -103,18 +101,21 @@ export default function Hero() {
 
           {/* Dark overlay */}
 
-          <div className="
+          <div
+            className="
             absolute
             inset-0
             bg-linear-to-r
         from-[#062d4f]/75
         via-[#073b78]/35
         to-transparent
-          " />
+          "
+          />
 
           {/* Bottom ocean gradient */}
 
-          <div className="
+          <div
+            className="
             absolute
             inset-x-0
             bottom-0
@@ -123,13 +124,14 @@ export default function Hero() {
         from-[#073b78]/75
         via-[#073b78]/20
         to-transparent
-          " />
-
+          "
+          />
         </div>
 
         {/* ================= CONTENT ================= */}
 
-        <div className="
+        <div
+          className="
           relative
           z-10
           mx-auto
@@ -144,7 +146,6 @@ export default function Hero() {
           pb-36
           lg:pb-32"
         >
-
           <motion.div
             initial={{
               opacity: 0,
@@ -156,11 +157,10 @@ export default function Hero() {
             }}
             transition={{
               duration: 0.8,
-              ease: 'easeOut',
+              ease: "easeOut",
             }}
             className="max-w-2xl"
           >
-
             {/* Eyebrow */}
 
             <motion.div
@@ -177,19 +177,22 @@ export default function Hero() {
                 gap-3
               "
             >
-              <span className="
+              <span
+                className="
                 h-px
                 w-10
                 bg-harbor"
               />
 
-              <span className="
+              <span
+                className="
                 text-xs
                 font-semibold
                 uppercase
                 tracking-[0.3em]
                 text-sky-300
-              ">
+              "
+              >
                 Marine & Shipping Services
               </span>
             </motion.div>
@@ -215,9 +218,7 @@ export default function Hero() {
               "
             >
               Confidence for
-              <span className="block text-sky-300">
-                Every Maritime
-              </span>
+              <span className="block text-sky-300">Every Maritime</span>
               Decision
             </motion.h1>
 
@@ -239,9 +240,9 @@ export default function Hero() {
                 sm:text-base
               "
             >
-              Trusted marine services, quality products, and
-              reliable port support designed to keep your
-              maritime operations moving safely and efficiently.
+              Trusted marine services, quality products, and reliable port
+              support designed to keep your maritime operations moving safely
+              and efficiently.
             </motion.p>
 
             {/* Buttons */}
@@ -285,11 +286,7 @@ export default function Hero() {
                 "
               >
                 Request a Consultation
-
-                <motion.span
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 4 }}
-                >
+                <motion.span initial={{ x: 0 }} whileHover={{ x: 4 }}>
                   →
                 </motion.span>
               </Link>
@@ -318,27 +315,25 @@ export default function Hero() {
                 Explore Services
               </Link>
             </motion.div>
-
           </motion.div>
         </div>
 
-
         {/* ================= STATS ================= */}
 
-<motion.div
-  initial={{
-    opacity: 0,
-    y: 30,
-  }}
-  animate={{
-    opacity: 1,
-    y: 0,
-  }}
-  transition={{
-    delay: 0.7,
-    duration: 0.7,
-  }}
-  className="
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            delay: 0.7,
+            duration: 0.7,
+          }}
+          className="
     absolute
     bottom-0
     left-1/2
@@ -348,9 +343,9 @@ export default function Hero() {
     -translate-x-1/2
     translate-y-1/2
   "
->
-  <div
-    className="
+        >
+          <div
+            className="
       grid
       grid-cols-2
       overflow-hidden
@@ -361,11 +356,11 @@ export default function Hero() {
       backdrop-blur-xl
       sm:grid-cols-4
     "
-  >
-    {stats.map((stat, index) => (
-      <div
-        key={stat.value}
-        className={`
+          >
+            {stats.map((stat, index) => (
+              <div
+                key={stat.value}
+                className={`
           relative
           px-5
           py-5
@@ -378,12 +373,12 @@ export default function Hero() {
 
           ${index !== stats.length - 1 ? "sm:border-r sm:border-white/10" : ""}
         `}
-      >
-        {/* Decorative dot */}
+              >
+                {/* Decorative dot */}
 
-        <div className="mb-2 flex items-center gap-2">
-          <span
-            className="
+                <div className="mb-2 flex items-center gap-2">
+                  <span
+                    className="
               h-1.5
               w-1.5
               rounded-full
@@ -391,68 +386,66 @@ export default function Hero() {
               shadow-sm
               shadow-sky-300/50
             "
-          />
+                  />
 
-          <span
-            className="
+                  <span
+                    className="
               text-[9px]
               uppercase
               tracking-[0.2em]
               text-sky-200/70
             "
-          >
-            NoOne Anchors
-          </span>
-        </div>
+                  >
+                    NoOne Anchors
+                  </span>
+                </div>
 
-        {/* Number */}
+                {/* Number */}
 
-        <div
-          className="
+                <div
+                  className="
             text-3xl
             font-black
             tracking-tight
             text-white
             sm:text-4xl
           "
-        >
-          {stat.value}
-        </div>
+                >
+                  {stat.value}
+                </div>
 
-        {/* Label */}
+                {/* Label */}
 
-        <div
-          className="
+                <div
+                  className="
             mt-1
             text-xs
             font-medium
             text-white/80
           "
-        >
-          {stat.label}
-        </div>
+                >
+                  {stat.label}
+                </div>
 
-        {/* Sublabel */}
+                {/* Sublabel */}
 
-        <div
-          className="
+                <div
+                  className="
             text-[10px]
             text-white/45
           "
-        >
-          {stat.sublabel}
-        </div>
-      </div>
-    ))}
-  </div>
-</motion.div>
-
+                >
+                  {stat.sublabel}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* ================= BOTTOM SPACING ================= */}
 
       <div className="h-24 bg-foam" />
-
     </section>
   );
 }

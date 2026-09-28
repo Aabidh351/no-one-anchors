@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -19,8 +18,7 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
-
+    <div className="px-5 md:hidden">
       {/* ================= MENU BUTTON ================= */}
       <motion.button
         aria-label={open ? "Close menu" : "Open menu"}
@@ -39,13 +37,8 @@ export default function MobileNav() {
         "
       >
         <div className="flex flex-col items-center justify-center gap-1.25">
-
           <motion.span
-            animate={
-              open
-                ? { rotate: 45, y: 7 }
-                : { rotate: 0, y: 0 }
-            }
+            animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.25 }}
             className="
               block
@@ -69,11 +62,7 @@ export default function MobileNav() {
           />
 
           <motion.span
-            animate={
-              open
-                ? { rotate: -45, y: -7 }
-                : { rotate: 0, y: 0 }
-            }
+            animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
             transition={{ duration: 0.25 }}
             className="
               block
@@ -83,12 +72,10 @@ export default function MobileNav() {
               bg-harbor
             "
           />
-
         </div>
       </motion.button>
 
       <AnimatePresence>
-
         {open && (
           <>
             {/* ================= BACKDROP ================= */}
@@ -145,7 +132,6 @@ export default function MobileNav() {
                 shadow-slate-900/10
               "
             >
-
               {/* ================= CTA ================= */}
               <motion.div
                 initial={{ opacity: 0, y: -5 }}
@@ -175,15 +161,12 @@ export default function MobileNav() {
                 >
                   <span>Request a Quote</span>
 
-                  <span className="text-lg">
-                    →
-                  </span>
+                  <span className="text-lg">→</span>
                 </Link>
               </motion.div>
 
               {/* ================= NAVIGATION ================= */}
               <div className="space-y-1">
-
                 {nav.map((item, i) => (
                   <motion.div
                     key={item.href}
@@ -238,34 +221,34 @@ export default function MobileNav() {
                     </Link>
                   </motion.div>
                 ))}
-
               </div>
 
               {/* ================= FOOTER ================= */}
-              <div className="
+              <div
+                className="
                 mt-2
                 border-t
                 border-slate-100
                 px-4
                 pt-3
                 pb-1
-              ">
-                <p className="
+              "
+              >
+                <p
+                  className="
                   text-[10px]
                   uppercase
                   tracking-[0.2em]
                   text-slate-400
-                ">
+                "
+                >
                   Marine & Shipping Services
                 </p>
               </div>
-
             </motion.nav>
           </>
         )}
-
       </AnimatePresence>
     </div>
   );
 }
-

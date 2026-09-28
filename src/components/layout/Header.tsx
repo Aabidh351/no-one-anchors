@@ -67,8 +67,7 @@ export default function Header() {
       `}
     >
       <div className="mx-auto max-w-7xl pb-5 pt-8 sm:px-6 lg:px-8 h-full">
-        <div className="flex items-center justify-between h-full">
-
+        <div className="mx-5 md:mx-0 flex items-center justify-between h-full">
           {/* ================= LOGO ================= */}
 
           <motion.div
@@ -76,10 +75,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link
-              href="/"
-              className="group flex items-center gap-3"
-            >
+            <Link href="/" className="group flex items-center gap-3">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
@@ -148,7 +144,6 @@ export default function Header() {
                     duration-200
                   "
                 >
-
                   {/* ================= HOVER / ACTIVE PILL ================= */}
 
                   {isHighlighted && (
@@ -299,10 +294,7 @@ export default function Header() {
             >
               <span>Request a Quote</span>
 
-              <motion.span
-                className="text-base"
-                whileHover={{ x: 3 }}
-              >
+              <motion.span className="text-base" whileHover={{ x: 3 }}>
                 →
               </motion.span>
             </Link>
@@ -311,10 +303,8 @@ export default function Header() {
           {/* ================= MOBILE NAV ================= */}
 
           <MobileNav />
-
         </div>
       </div>
     </motion.header>
   );
 }
-

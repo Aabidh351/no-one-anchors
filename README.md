@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NoOne Anchors
+
+A website for a ship chandler and marine services company in Chattogram, Bangladesh. It shows what the company supplies, which ports it covers, and lets visitors request a quote for their vessel.
+
+## Key Features
+
+- Homepage with services, certifications, port coverage, and testimonials
+- Services and product catalog pages with detail views
+- Interactive port map linked to a selectable port list
+- Photo gallery with a bento grid, pagination, and a zoomable lightbox
+- News section with a featured post and article pages
+- Request a Quote form with client and server validation
+- Animated navbar and footer, responsive down to mobile
+
+## Tech Stack
+
+- Next.js (App Router), React, TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- React Hook Form and Zod
+- lucide-react
+- Planned: PostgreSQL with Prisma
 
 ## Getting Started
 
-First, run the development server:
+Requires Node.js 20 or newer.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- All content lives in `src/lib/data.ts` and is placeholder data. Replace it with real content before publishing.
+- The quote form currently only logs submissions to the server console. Add email notification or database storage before launch.
+- Gallery images use `next/image`, so add each image host to `images.remotePatterns` in `next.config.ts`.

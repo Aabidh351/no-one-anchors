@@ -35,6 +35,9 @@ const gallery = [
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const nextImage = () => {
+    setSelectedIndex((prev) => (prev + 1) % gallery.length);
+  };
   return (
     <section className="bg-foam py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -249,27 +252,38 @@ export default function Gallery() {
 
                   {/* Arrow */}
 
-                  <div
-                    className="
-                      flex
-                      h-10
-                      w-10
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/30
-                      bg-white/10
-                      text-white
-                      backdrop-blur-sm
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                    "
-                  >
-                    →
-                  </div>
+                  {selectedIndex === index && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextImage();
+                      }}
+                      aria-label="Next image"
+                      className="
+      absolute
+      bottom-5
+      right-5
+      z-20
+      flex
+      h-10
+      w-10
+      items-center
+      justify-center
+      rounded-full
+      bg-harbor
+      text-white
+      shadow-lg
+      transition-all
+      duration-300
+      hover:scale-110
+      active:scale-95
+      md:hidden
+    "
+                    >
+                      →
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>
