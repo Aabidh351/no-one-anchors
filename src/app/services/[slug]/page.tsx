@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Check, ArrowLeft } from "lucide-react";
-import { getService, getServices } from "@/lib/api";
+import { services, type Service } from "@/lib/api/data";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = await getService(slug);
+const service = services.find((s) => s.slug === slug);
   if (!service) return {};
   return { title: service.name, description: service.summary };
 }
@@ -25,10 +25,10 @@ export default async function ServiceDetailPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const [service, allServices] = await Promise.all([getService(slug), getServices()]);
-  if (!service) notFound();
+  const service: Service | undefined = services.find((s) => s.slug === slug);
+if (!service) notFound();
 
-  const otherServices = allServices.filter((s) => s.slug !== slug).slice(0, 3);
+const otherServices: Service[] = services.filter((s) => s.slug !== slug).slice(0, 3);
 
   return (
     <>

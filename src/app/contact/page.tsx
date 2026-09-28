@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/ui/PageHeader";
 import RFQForm from "@/components/sections/RFQForm";
-import { getPorts } from "@/lib/api";
+import { ports, type Port } from "@/lib/api/data";
 
 export const dynamic = "force-dynamic";
 
@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default async function ContactPage() {
-  const ports = await getPorts();
 
   return (
     <>
@@ -41,7 +40,7 @@ export default async function ContactPage() {
           <div>
             <h2 className="font-display font-semibold text-xl text-ink mb-3">Port offices</h2>
             <ul className="space-y-3">
-              {ports.map((port) => (
+              {ports.map((port: Port) => (
                 <li key={port.code} className="text-sm border-t border-line pt-3">
                   <div className="text-ink font-medium">{port.name}, {port.country}</div>
                   <div className="text-ink/60">{port.responseTime} typical response</div>

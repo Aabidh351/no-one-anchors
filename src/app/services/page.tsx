@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { services, type Service } from "@/lib/api/data";
 import {
   Anchor,
   UtensilsCrossed,
@@ -11,7 +12,6 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
-import { getServices } from "@/lib/api";
 
 export const dynamic = "force-dynamic";
 
@@ -31,7 +31,7 @@ const icons: Record<string, LucideIcon> = {
 };
 
 export default async function ServicesPage() {
-  const services = await getServices();
+
 
   return (
     <>
@@ -43,7 +43,7 @@ export default async function ServicesPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((service, i) => {
+          {services.map((service: Service, i:number) => {
             const Icon = icons[service.slug] ?? Anchor;
             return (
               <Link
