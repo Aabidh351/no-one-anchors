@@ -6,11 +6,13 @@ export type Service = {
   scope: string[];
 };
 
+export type ProductItem = { name: string; spec: string };
+
 export type ProductCategory = {
   slug: string;
   name: string;
   description: string;
-  items: { name: string; spec: string }[];
+  items: ProductItem[];
 };
 
 export type Port = {
