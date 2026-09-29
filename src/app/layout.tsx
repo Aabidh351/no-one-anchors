@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Meridian Ship Supply — Marine Provisioning & Ship Chandlery",
+  title: "NoOne Anchors — Marine Provisioning & Ship Chandlery",
   description:
     "Marine provisioning, deck and engine stores, safety equipment, and port agency services across a five-port network, available around the clock.",
 };
